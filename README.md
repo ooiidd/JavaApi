@@ -10,3 +10,5 @@
 4. PerHour <> PerMin <> PerSec 변환 함수(?) 
 
 5. RegEx( 전화번호, Email)
+
+6. Array 관련 -> ArrayApi
