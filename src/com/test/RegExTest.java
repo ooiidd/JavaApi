@@ -30,6 +30,8 @@ public class RegExTest {
 				"test@test.cie",
 				"test@test"
 		};
+		
+		//필요시 수정 필요
 		String reg2 = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
 		for(String cur : emailStr) {
 			if(cur.matches(reg2))
