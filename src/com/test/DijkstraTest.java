@@ -24,9 +24,16 @@ public class DijkstraTest {
 			}
 		}
 		list = list.stream().distinct().sorted().collect(Collectors.toList());
-		
-		
+
 		Dijkstra dijkstra = new Dijkstra(list.size());
+		/**
+		 * Path 찾을때 Naming을위해서만 사용
+		 */
+		for(int i=0;i<list.size();i++) {
+			dijkstra.addName(i, String.valueOf(list.get(i)));
+		}
+		
+		
 		for(int i=0;i<list.size();i++) {
 			for(int j=0;j<list.size();j++) {
 				if(i==j) continue;
@@ -42,11 +49,45 @@ public class DijkstraTest {
 		}
 
 		System.out.println(dijkstra.getDist(0,list.size()-1));
+		System.out.println(dijkstra.getPath(list.size()-1));
 		
 		
 		/**
-		 * 자전거 넣음
+		 * 도보 Edge 넣음
 		 */
-//		dijkstra.addEdge(3, 5, );
+		Dijkstra dijkstra2 = new Dijkstra(12);
+		for(int i=1;i<=12;i++) {
+			for(int j=1;j<=12;j++) {
+				if(i!=j)
+					dijkstra2.addEdge(i, j, Math.abs(i-j)*240);
+			}
+		}
+		/*
+		 * 자전거 Edge 넣음
+		 */
+		int[] jajungu = {3,5,9};
+		int l = jajungu.length;
+		for(int i=0;i<l;i++) {
+			for(int j=0;j<l;j++) {
+				if(i!=j)
+					dijkstra2.addEdge(jajungu[i], jajungu[j], Math.abs(jajungu[i]-jajungu[j])*70);
+			}
+		}
+		
+		System.out.println(dijkstra2.getDist(6,10));
+		System.out.println(dijkstra2.getPath(10));
+		dijkstra2.init();
+		dijkstra2.setStartState(600);
+		
+		int[] bus = {1,12};
+		int busl = bus.length;
+		for(int i=0;i<busl;i++) {
+			for(int j=0;j<busl;j++) {
+				if(i!=j)
+					dijkstra2.addEdge(bus[i], bus[j], Math.abs(bus[i]-bus[j])*20,1);
+			}
+		}
+		System.out.println(dijkstra2.getDist(4,12));
+		System.out.println(dijkstra2.getPath(12));
 	}
 }
