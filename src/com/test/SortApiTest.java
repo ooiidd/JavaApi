@@ -19,9 +19,14 @@ public class SortApiTest {
 		sarr = SortApi.sort3(sarr); for(String el : sarr) {System.out.print(el + " ");} System.out.println();
 		sarr = SortApi.sort4(sarr); for(String el : sarr) {System.out.print(el + " ");} System.out.println();
 		
+		
+		
+		/* Getter 메소드 필요
+		Comparator<Student> reverse = Comparator.comparing(Student::getName).reversed();
+		list.sort(Comparator.comparing(Student::getNum).thenComparing(reverse)
+		        .thenComparing(Student::getAddress));
+		        */
 
-		Integer[] Iparr = intArray.clone();
-		Arrays.sort(parr,Collections.reverseOrder());
 	}
 
 }
