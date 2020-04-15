@@ -62,12 +62,13 @@ public class ArrayApiTest {
 		
 
 		System.out.println("------------------(List -> array)int 변환-------------------");
-		System.out.println( Arrays.deepToString( ArrayApi.listToArray(list)) );
-		System.out.println( Arrays.deepToString( ArrayApi.listToDoubleArray(doubleList)) );
+		System.out.println( Arrays.deepToString( ArrayApi.listToIntegerArray(list)) );
+		System.out.println( Arrays.deepToString( ArrayApi.listToDoubleIntegerArray(doubleList)) );
 		System.out.println("--------------------------------------------");
 
 		System.out.println("------------------(List -> array)String 변환-------------------");
 		System.out.println( Arrays.deepToString( ArrayApi.listToArray(strList)) );
+		String[][] result = ArrayApi.listToDoubleArray(strDoubleList);
 		System.out.println( Arrays.deepToString( ArrayApi.listToDoubleArray(strDoubleList)) );
 	
 		System.out.println("--------------------------------------------");
