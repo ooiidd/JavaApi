@@ -8,6 +8,9 @@ import com.api.Dijkstra;
 
 public class DijkstraTest {
 	public static void main(String[] args) {
+		/**
+		 * Test Case 1
+		 */
 		int[][] lift = {
 				{0,2000},
 				{2500,5500},
@@ -52,6 +55,10 @@ public class DijkstraTest {
 		System.out.println(dijkstra.getPath(list.size()-1));
 		
 		
+		
+		/**
+		 * Test Case 2
+		 */
 		/**
 		 * 도보 Edge 넣음
 		 */
@@ -76,6 +83,12 @@ public class DijkstraTest {
 		
 		System.out.println(dijkstra2.getDist(6,10));
 		System.out.println(dijkstra2.getPath(10));
+		
+
+		/**
+		 * Test Case 3
+		 * Test Case 2 의 Edge 유지
+		 */
 		dijkstra2.init();
 		dijkstra2.setStartState(600);
 		
